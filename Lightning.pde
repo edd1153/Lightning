@@ -6,15 +6,22 @@ int endY = 150;
 void setup()
 {
   size(500,500);
-  background(50);
+  background(70);
   strokeWeight(10);
 }
 void draw()
 {
+	//Thunder Cloud
+	fill(255);
+  rect(250, 100, 50, 50);
+  arc(250, 100, 25, 25, 0, PI);
+  arc(275, 100, 25, 25, 0, PI);
+  fill(0);
+	//Lightning
   int boltValue = (int)(Math.random() * 255);
   int randIntOne = (int)(Math.random() * 9);
   int randIntTwo = (int)(Math.random() * 9) - 9;
-  stroke(boltValue);
+  stroke(boltValue,255, 0);
   while(endX < 500){
   	endX = startX + randIntOne;
   	endY = startY + randIntTwo;
@@ -22,7 +29,6 @@ void draw()
   	startX = endX;
   	startY = endY;
   }
-
 }
 void mousePressed()
 {
