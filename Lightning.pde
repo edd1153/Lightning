@@ -1,39 +1,62 @@
-int startX = 0;
-int startY = 150;
+int startX = 25;
+int startY = 480;
 int endX = 0;
-int endY = 150;
+int endY = 100;
 
 void setup()
 {
   size(500,500);
-  background(70);
+  background(0);
   strokeWeight(10);
 }
 void draw()
 {
-	//Thunder Cloud
-	fill(255);
-  rect(250, 100, 50, 50);
-  arc(250, 100, 25, 25, 0, PI);
-  arc(275, 100, 25, 25, 0, PI);
+  //Light Lamp/Projector
+  fill(255);
+  rotate(PI/4);
+  rect(340, 310, 50, 50);
+  rotate(-PI/4);
+  //MGM Hotel Building
+  fill(255,232,23);
+  rect(300, 100, 200, 400);
+  fill(255,23,31);
+  text("MGM", 365, 140);
+  textSize(30);
   fill(0);
-	//Lightning
+  rect(325, 150, 50, 50);
+  rect(325, 230, 50, 50);
+  rect(325, 310, 50, 50);
+  rect(415, 150, 50, 50);
+  rect(415, 230, 50, 50);
+  rect(415, 310, 50, 50);
+  fill(255);
+  rect(360, 380, 70, 120);
+  fill(0, 100, 255);
+  ellipse(410, 440, 10, 10);
+  //Light Show
   int boltValue = (int)(Math.random() * 255);
   int randIntOne = (int)(Math.random() * 9);
   int randIntTwo = (int)(Math.random() * 9) - 9;
-  stroke(boltValue,255, 0);
+  stroke(boltValue, boltValue + 100, boltValue - 50);
   while(endX < 500){
-  	endX = startX + randIntOne;
-  	endY = startY + randIntTwo;
-  	line(startX, startY, endX, endY);
-  	startX = endX;
-  	startY = endY;
+    endX = startX + randIntOne;
+    endY = startY + randIntTwo;
+    line(startX, startY, endX, endY);
+    startX = endX;
+    startY = endY;
   }
+  if (endX > 500){
+   endX = 0;
+  }
+  if (endY > 550){
+   endY = 150;
+  }
+  stroke(0);
 }
 void mousePressed()
 {
-	startX = 0;
-	startY = 150;
-	endX = 0;
-	endY = 150;
+  startX = 25;
+  startY = 480;
+  endX = 0;
+  endY = 100;
 }
