@@ -21,7 +21,7 @@ void draw()
   rect(300, 100, 200, 400);
   fill(255,23,31);
   text("MGM", 365, 140);
-  textSize(30);
+  textSize(60);
   fill(0);
   rect(325, 150, 50, 50);
   rect(325, 230, 50, 50);
